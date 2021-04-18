@@ -42,7 +42,11 @@ class Student
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
   }
-  
+  public function addstudent ($id, $name, $surname, $sidi_code, $tax_code){
+    $sql = "INSERTO INTO student VALUES ('$id','$name','$surname','$sidi_code','$tax_code')";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+  }
   
 }
 ?>
