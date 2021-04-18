@@ -1,6 +1,6 @@
 <?php
-// $method = $_SERVER["REQUEST_METHOD"];
-$method="PUT";
+$method = $_SERVER["REQUEST_METHOD"];
+//$method="DELETE";
 include('./class/Student.php');
 $student = new Student();
 
@@ -37,7 +37,7 @@ switch($method) {
   case 'DELETE':
     // TODO
     echo"delete";
-    $id =67;
+    $id =2;
     if (isset($id)){
         $student->deletestudent($id);
       }else{
@@ -52,18 +52,18 @@ switch($method) {
   case 'PUT':
     // TODO
     echo"PUT";
-    $id = 5;
+    $id = 2;
     $name = 'Ginevra';
     $surname = 'Lavacchi';
-    $sidi_code = '12342344';
-    $tax_code = 'AAAAAAAAAAAAAAAA';
+    $sidi_code = '12342310';
+    $tax_code = 'AAAAAAAAAAAAAAA';
     if (isset($id, $name, $surname, $sidi_code, $tax_code)){
-        $student = $student->addstudent($id, $name, $surname, $sidi_code, $tax_code);
+        $student->addstudent($id, $name, $surname, $sidi_code, $tax_code);
       }else{
         echo("Dati inseriti non corretti");
       }
-    $students = $student->all();
-    $js_encode = json_encode(array('state'=>TRUE, 'students'=>$students),true);
+    $student = $student->all();
+    $js_encode = json_encode(array('state'=>TRUE, 'students'=>$student),true);
     header("Content-Type: application/json");
     echo($js_encode);
     break;
