@@ -1,10 +1,10 @@
 <?php
 // Database Connection
 class DBConnection {
-    private $_dbHostname = "zmysql:3306";
-    private $_dbName = "FI_ITIS_MEUCCI";
+    private $_dbHostname = "localhost";
+    private $_dbName = "fi_itis_meucci";
     private $_dbUsername = "root";
-    private $_dbPassword = "password";
+    private $_dbPassword = "";
     private $_con;
 
     public function __construct() {
