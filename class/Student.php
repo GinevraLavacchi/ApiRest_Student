@@ -42,10 +42,28 @@ class Student
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
   }
-  public function addstudent ($id, $name, $surname, $sidi_code, $tax_code){
-    $sql = "INSERT INTO student(id,name,surname,sidi_code,tax_code) VALUES('".$id."','".$name."','".$surname."','".$sidi_code."','".$tax_code."')";
+  public function addstudent ($name, $surname, $sidi_code, $tax_code){
+    $sql = "INSERT INTO student(name,surname,sidi_code,tax_code) VALUES('".$name."','".$surname."','".$sidi_code."','".$tax_code."')";
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
+    
+    $sql = "SELECT * FROM student WHERE sidi_code='".$sidi_code."'";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $result;
+  }
+  public function modifyStudent($id,$name, $surname, $sidi_code, $tax_code)
+  {
+    $sql = "UPDATE student SET name='".$name."',surname='".$surname."',sidi_code='".$sidi_code."',tax_code='".$tax_code."' WHERE id='".$id."'";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+
+    $sql = "SELECT * FROM student WHERE id='".$id."'";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $result;
   }
   
 }
