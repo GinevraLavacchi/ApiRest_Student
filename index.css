@@ -1,0 +1,41 @@
+body
+{
+    margin:5px;
+}
+.card
+{
+    background-color: rgba(167, 165, 165, 0.877);
+    width:fit-content;
+    margin: auto;
+}
+#table1
+{
+    border:solid 2px;
+}
+td
+{
+    border:solid 1px;
+    padding:5px;
+}
+#add
+{
+    float: right;
+    margin-right:10px;
+    margin-top:5px;
+}
+#delete
+{
+    float:right;
+    margin-right:10px;
+    margin-top:5px;
+}
+#inizioPag
+{
+    margin:30px 5px 0px 5px;
+}
+#scroll
+{
+    float:right;
+    margin-right:10px;
+    margin-top:5px;
+}
